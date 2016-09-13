@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml>
+  <Document>
+    <description>Weather Stations:/home/tanner/src/wnpy2/clark.kml</description>
+    <Placemark>
+      <name>PHYM8</name
+>    <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>
+          -110.717500,46.835278,0.0
+        </coordinates>
+      </Point>
+      <description>
+        <![CDATA[
+          Name: PHYM8
+          Height: 10.00 m
+          Speed: 0.45 mps
+          Direction: 79 degrees
+          Cloud Cover: 0.00 percent
+          Temperature: -3.9 C
+          Radius of Influence: infinite
+        ]]>
+      </description>
+    </Placemark>
+    <Placemark>
+      <name>TS673</name
+>    <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>
+          -110.919089,46.897661,0.0
+        </coordinates>
+      </Point>
+      <description>
+        <![CDATA[
+          Name: TS673
+          Height: 10.00 m
+          Speed: 0.00 mps
+          Direction: 43 degrees
+          Cloud Cover: 0.00 percent
+          Temperature: -2.2 C
+          Radius of Influence: infinite
+        ]]>
+      </description>
+    </Placemark>
+    <Placemark>
+      <name>NCRM8</name
+>    <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>
+          -110.851200,46.736917,0.0
+        </coordinates>
+      </Point>
+      <description>
+        <![CDATA[
+          Name: NCRM8
+          Height: 10.00 m
+          Speed: 0.45 mps
+          Direction: 56 degrees
+          Cloud Cover: 0.00 percent
+          Temperature: 2.8 C
+          Radius of Influence: infinite
+        ]]>
+      </description>
+    </Placemark>
+  </Document>
+</kml>

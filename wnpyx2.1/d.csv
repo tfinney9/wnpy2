@@ -1,0 +1,4 @@
+Station_Name,"Coord_Sys(PROJCS,GEOGCS)","Datum(WGS84,NAD83,NAD27)",Lat/YCoord,Lon/XCoord,Height,"Height_Units(meters,feet)",Speed,"Speed_Units(mph,kph,mps)",Direction(degrees),Temperature,"Temperature_Units(F,C)",Cloud_Cover(%),Radius_of_Influence,"Radius_of_Influence_Units(miles,feet,meters,km)"
+PHYM8,GEOGCS,WGS84, 46.835278,-110.7175,10,meters,0.45,mps,79.0,-3.89,C,0,-1,km
+TS673,GEOGCS,WGS84,46.897661,-110.919089,10,meters,0.0,mps,43.0,-2.22,C,0,-1,km
+NCRM8,GEOGCS,WGS84, 46.736917,-110.8512,10,meters,0.45,mps,56.0,2.78,C,0,-1,km
