@@ -89,7 +89,7 @@ def extractZip():
 def renameZipExtracts():
     print "renaming zip files..."
     kmlGrid=glob.glob('/home/tanner/src/wnpy2/stability/data/poph_*.kml')
-    key=glob.glob('/home/tanner/src/wnpy2/stability/data/poph_*.bmp')
+    key=glob.glob('/home/tanner/src/wnpy2/stability/data/poph_*_stability.bmp')
     os.rename(kmlGrid[0],'/home/tanner/src/wnpy2/stability/data/pStability.kml')
     os.rename(key[0],'/home/tanner/src/wnpy2/stability/data/pStability.bmp')
         

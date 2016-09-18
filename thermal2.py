@@ -88,9 +88,11 @@ def extractZip():
 def renameZipExtracts():
     print "renaming zip files..."
     kmlGrid=glob.glob('/home/tanner/src/wnpy2/thermal/data/poph_*.kml')
-    key=glob.glob('/home/tanner/src/wnpy2/thermal/data/poph_*.bmp')
+    key=glob.glob('/home/tanner/src/wnpy2/thermal/data/poph_*_stability.bmp')
+    time=glob.glob('/home/tanner/src/wnpy2/thermal/data/poph_*.date_time.bmp')
     os.rename(kmlGrid[0],'/home/tanner/src/wnpy2/thermal/data/pThermal.kml')
     os.rename(key[0],'/home/tanner/src/wnpy2/thermal/data/pThermal.bmp')
+    os.rename(time[0],'/home/tanner/src/wnpy2/thermal/data/PDS.bmp')
         
 # NCRM8, TS673, PHYM8
 #2,13,   28,6,  18,28
@@ -133,7 +135,7 @@ def moveLocalFiles():
     print "moving thermal Sim Files to ninjaoutput..."
     shutil.copyfile('/home/tanner/src/wnpy2/thermal/data/pThermal.bmp','/home/tanner/ninjaoutput/thermal/pThermal.bmp')
     shutil.copyfile('/home/tanner/src/wnpy2/thermal/data/pThermal.kml','/home/tanner/ninjaoutput/thermal/pThermal.kml')
-
+    shutil.copyfile('/home/tanner/src/wnpy2/thermal/data/PDS.bmp','/home/tanner/ninjaoutput/diurnal/PDS.bmp')
 def runThermal2():
     master=getTime()
     writeWNcfg(master)
