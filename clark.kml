@@ -14,10 +14,10 @@
         <![CDATA[
           Name: PHYM8
           Height: 10.00 m
-          Speed: 0.45 mps
-          Direction: 79 degrees
+          Speed: 2.68 mps
+          Direction: 223 degrees
           Cloud Cover: 0.00 percent
-          Temperature: -3.9 C
+          Temperature: 11.7 C
           Radius of Influence: infinite
         ]]>
       </description>
@@ -34,10 +34,10 @@
         <![CDATA[
           Name: TS673
           Height: 10.00 m
-          Speed: 0.00 mps
-          Direction: 43 degrees
+          Speed: 2.68 mps
+          Direction: 231 degrees
           Cloud Cover: 0.00 percent
-          Temperature: -2.2 C
+          Temperature: 12.2 C
           Radius of Influence: infinite
         ]]>
       </description>
@@ -54,10 +54,10 @@
         <![CDATA[
           Name: NCRM8
           Height: 10.00 m
-          Speed: 0.45 mps
-          Direction: 56 degrees
+          Speed: 0.00 mps
+          Direction: 27 degrees
           Cloud Cover: 0.00 percent
-          Temperature: 2.8 C
+          Temperature: 13.3 C
           Radius of Influence: infinite
         ]]>
       </description>

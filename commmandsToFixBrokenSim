@@ -1,0 +1,67 @@
+##########################################################
+#                                                        #
+#Commands To Clean Up Automatic Simulations              #
+#When it Breaks                                          #
+#           						 #
+##########################################################
+
+########
+#Basically what this does is store the old data to a new file and creates some new spreadsheetes to fix saving errors that regularily occur
+####################
+
+##########
+#Standard#
+##########
+
+mv /home/tanner/src/wnpy2/standard/data/StandardAngle.csv /home/tanner/src/wnpy2/standard/data/OldData/SAng1.csv
+
+mv /home/tanner/src/wnpy2/standard/data/StandardVelocity.csv /home/tanner/src/wnpy2/standard/data/OldData/SVel1.csv
+
+cp /home/tanner/src/wnpy2/blanks/StandardAngle.csv /home/tanner/src/wnpy2/standard/data/
+
+cp /home/tanner/src/wnpy2/blanks/StandardVelocity.csv /home/tanner/src/wnpy2/standard/data/
+
+#########
+#Diurnal#
+#########
+
+mv /home/tanner/src/wnpy2/diurnal/data/DiurnalAngle.csv /home/tanner/src/wnpy2/diurnal/data/OldData/DAng1.csv
+
+mv /home/tanner/src/wnpy2/diurnal/data/DiurnalVelocity.csv /home/tanner/src/wnpy2/diurnal/data/OldData/DVel1.csv
+
+cp /home/tanner/src/wnpy2/blanks/DiurnalAngle.csv /home/tanner/src/wnpy2/diurnal/data/
+
+cp /home/tanner/src/wnpy2/blanks/DiurnalVelocity.csv /home/tanner/src/wnpy2/diurnal/data/
+
+###########
+#Stability#
+###########
+
+mv /home/tanner/src/wnpy2/stability/data/StabilityAngle.csv /home/tanner/src/wnpy2/stability/data/OldData/SAng1.csv
+
+mv /home/tanner/src/wnpy2/stability/data/StabilityVelocity.csv /home/tanner/src/wnpy2/stability/data/OldData/SVel1.csv
+
+cp /home/tanner/src/wnpy2/blanks/StabilityAngle.csv /home/tanner/src/wnpy2/stability/data/
+
+cp /home/tanner/src/wnpy2/blanks/StabilityVelocity.csv /home/tanner/src/wnpy2/stability/data/
+
+#########
+#Thermal#
+#########
+
+mv /home/tanner/src/wnpy2/thermal/data/ThermalAngle.csv /home/tanner/src/wnpy2/thermal/data/OldData/TAng1.csv
+
+mv /home/tanner/src/wnpy2/thermal/data/ThermalVelocity.csv /home/tanner/src/wnpy2/thermal/data/OldData/TVel1.csv
+
+cp /home/tanner/src/wnpy2/blanks/ThermalAngle.csv /home/tanner/src/wnpy2/thermal/data/
+
+cp /home/tanner/src/wnpy2/blanks/ThermalVelocity.csv /home/tanner/src/wnpy2/thermal/data/
+
+0 * * * * export WINDNINJA_DATA=/home/tanner/src/wind/windninja/data;/home/tanner/src/wnpy2/2.1.py;
+
+##################################################
+#^^^ Cron Command to check to make sure it worked#
+##################################################
+
+
+

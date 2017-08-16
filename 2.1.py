@@ -9,9 +9,11 @@ import datetime
 import time
 import glob
 import csv
+import datetime
 
 import mwWindNinja as mw
 import plot2
+import angPlot2
 
 def getTime():# for diurnal winds and stability
     print "getting time..."
@@ -67,7 +69,8 @@ def writeLogFile(ini):
     dur=final-ini
     log.write("Runtime: ")
     log.write(str(dur))
-    
+print '----------------------------------------'   
+print datetime.datetime.now()
 start=time.time()    
 fetchReal()
 fetchWeather()
@@ -93,14 +96,24 @@ stationData=plot2.AssembleData()
 plot2.plotVelocity("/home/tanner/ninjaoutput/thermal/NCRM8.png","NCRM8",0,2,"A",stationData,stepdata)
 plot2.plotVelocity("/home/tanner/ninjaoutput/thermal/TS673.png","TS673",1,2,"A",stationData,stepdata)
 plot2.plotVelocity("/home/tanner/ninjaoutput/thermal/PHYM8.png","PHYM8",2,2,"A",stationData,stepdata)
+#
+#angPlot2.runFile()
+stepdata2=angPlot2.CreateSteps()
+stationData2=angPlot2.AssembleData()
+angPlot2.plotAngle("/home/tanner/ninjaoutput/thermal/DS-A-NCRM8.png","NCRM8",0,2,3,"A",stationData2,stepdata2)
+angPlot2.plotAngle("/home/tanner/ninjaoutput/diurnal/DS-V-TS673.png","TS673",1,2,4,"A",stationData2,stepdata2)
+angPlot2.plotAngle("/home/tanner/ninjaoutput/diurnal/DS-V-NCRM8.png","PHYM8",2,2,5,"A",stationData2,stepdata2)
 
-#WRITE LOG FILE
+##WRITE LOG FILE
 writeLogFile(start)
 
-#MOVE META FILES
+##MOVE META FILES
 shutil.copyfile('/home/tanner/src/wnpy2/clark.kml','/home/tanner/ninjaoutput/thermal/clark.kml')
 #metafiles: logfile, plots, clark.kml
-    
+
+print datetime.datetime.now()
+print '----------------------------------------'   
+
     
     
     

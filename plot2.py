@@ -30,8 +30,37 @@ def readStep():
     for i in range(len(valData)):
         tStep.append(float(valData[i][0]))
     return tStep
-    
 
+def readDiurnalTime():
+    valData=list(csv.reader(open('/home/tanner/src/wnpy2/diurnal/data/DiurnalVelocity.csv','r'),delimiter=','))
+    tStep=list()    
+    dA=list()    
+    for i in range(len(valData)):
+        tStep.append(float(valData[i][0]))
+    for k in range(len(tStep)):
+        dA.append(datetime.datetime.fromtimestamp(tStep[k]))
+    return dA   
+
+def readStabTime():
+    valData=list(csv.reader(open('/home/tanner/src/wnpy2/stability/data/StabilityVelocity.csv','r'),delimiter=','))
+    tStep=list()    
+    dA=list()    
+    for i in range(len(valData)):
+        tStep.append(float(valData[i][0]))
+    for k in range(len(tStep)):
+        dA.append(datetime.datetime.fromtimestamp(tStep[k]))
+    return dA   
+
+def readThermalTime():
+    valData=list(csv.reader(open('/home/tanner/src/wnpy2/thermal/data/ThermalVelocity.csv','r'),delimiter=','))
+    tStep=list()    
+    dA=list()    
+    for i in range(len(valData)):
+        tStep.append(float(valData[i][0]))
+    for k in range(len(tStep)):
+        dA.append(datetime.datetime.fromtimestamp(tStep[k]))
+    return dA   
+    
 def readObservedData():
     valData=list(csv.reader(open('/home/tanner/src/wnpy2/standard/data/StandardVelocity.csv','r'),delimiter=','))
     NCRM8=list()
@@ -132,7 +161,8 @@ def CreateSteps():
     steplist.append(dInit)
     steplist.append(dFinal)
 
-    return steplist    
+    return steplist
+    
     
         
 def AssembleData(): 
@@ -171,12 +201,14 @@ def plotVelocity(fileName,stationID,idx0,idx1,ID,data,steps):
 #    if ska==True:
 #        pyplot.plot(dA,stable[idx1],color='y',marker='o',markeredgecolor='y',markerfacecolor='none',ls='--',label='nonDiurnal, neutral WN Sim')
 
-
+    dTime=readDiurnalTime()
+    tTime=readThermalTime()
+    stabTime=readStabTime()
     pyplot.plot(data[0],data[1][idx0],marker='o',color='m',ls='-',label='Observed Data for %s'% stationID)
     pyplot.plot(data[0],data[2][idx0],color='y',marker='o',markeredgecolor='y',markerfacecolor='none',ls='--',label='Standard Simulation')
-    pyplot.plot(data[0],data[3][idx0],color='b',marker='o',markeredgecolor='b',markerfacecolor='none',ls='--',label='+Diurnal Winds')
-    pyplot.plot(data[0],data[4][idx0],color='g',marker='o',markeredgecolor='g',markerfacecolor='none',ls='--',label='+Non-neutral Stability')
-    pyplot.plot(data[0],data[5][idx0],color='r',marker='o',markeredgecolor='r',markerfacecolor='none',ls='--',label='+Both Thermal Params')
+    pyplot.plot(dTime,data[3][idx0],color='b',marker='o',markeredgecolor='b',markerfacecolor='none',ls='--',label='+Diurnal Winds')
+    pyplot.plot(stabTime,data[4][idx0],color='g',marker='o',markeredgecolor='g',markerfacecolor='none',ls='--',label='+Non-neutral Stability')
+    pyplot.plot(tTime,data[5][idx0],color='r',marker='o',markeredgecolor='r',markerfacecolor='none',ls='--',label='+Both Thermal Params')
     pyplot.legend(bbox_to_anchor=(0.0,1.4),loc='upper right',borderaxespad=0)
     pyplot.ylabel('Wind Speed (m/s)')
     pyplot.title('Diurnal Non-Neutral Stability Wind\n Speed Validation for %s' % stationID, loc='right')
